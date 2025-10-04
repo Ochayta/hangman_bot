@@ -1,0 +1,23 @@
+<test>
+    <test-case id="1">
+        <q>/start</q>
+        <a state = "/EntryPoint"/>
+        <q>нет</q>
+        <a state = "/EntryPoint/Согласен?/Нет"/>
+    </test-case>
+    <test-case id="2">
+        <q>/start</q>
+        <a state = "/EntryPoint"/>
+        <q>как дела?</q>
+        <a state = "/NoMatch"/>
+    </test-case>
+    <test-case id="3">
+        <random>1,2</random>
+        <q>/NoMatch</q>
+        <a>А по-русски можно? Я не понял.</a>
+        <q>/NoMatch</q>
+        <a>Чего?</a>
+        <q>/NoMatch</q>
+        <a>Сорян, не могу разобрать, что говоришь.</a>
+    </test-case>
+</test>
