@@ -13,3 +13,9 @@ nlp:
   intentNoMatchThresholds:
     phrases: 0.2
     patterns: 0.2
+
+injector:
+  slotfilling:
+    maxSlotRetries: 6
+    stopOnAnyIntent: true
+    stopOnAnyIntentThreshold: 0.2

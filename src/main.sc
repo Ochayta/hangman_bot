@@ -6,10 +6,6 @@ require: text/text.sc
 
 require: common.js
     module = sys.zb-common
-    
-# Для игры Назови столицу    
-require: where/where.sc
-    module = sys.zb-common
 
 # Для игры Виселица
 require: hangmanGameData.csv
@@ -24,32 +20,83 @@ patterns:
 
 theme: /
 
-    state: Start
+    state: EntryPoint
         q!: $regex</start>
-        script:
-            $jsapi.startSession();
-        a: Начнём
-        
-    state: Hello
-        intent!: /привет
-        a: Привет-привет
+        intent!: /Привет 
+        a: Слышишь, может в "Виселицу" разок сыгранём?
+        go!: /EntryPoint/Согласен?
+            
+        state: Согласен?
 
-    state: CityPattern
-        q: * $Capital *
-        a: Столица: {{$parseTree._Capital.name}}
-        
-    state: Text
-        q: $Word
-        a: Слово из справочника: {{$parseTree._Word.word}}
+            state: Да
+                intent: /Согласие
+                go!: /Hangman
 
-    state: NoMatch
+            state: Нет
+                intent: /Несогласие
+                a: Ага, ломаешься, значит! Как надумаешь, пиши «Давай поиграем».
+        
+    state: Hangman
+        intent!: /Давай поиграем 
+        a: Хорош! Кста, а ты правила-то помнишь? Могу напомнить, если надо.
+        
+        state: Hangman/правила
+            intent: /Надо
+            a: Все просто: я загадываю слово, а ты пытаешься его отгадать. Можно угадывать по букве за ход, а можно все слово сразу. Как только слово назовешь - победа!
+            a: Только наобум не называй: 6 раз ошибешься со словом или буквой и game over, это считается за проигрыш. Начнем?
+            go!: /Hangman/правила/Согласен?
+            
+            state: Согласен?
+
+                state: Да
+                    intent: /Согласие
+                    go!: /Hangman/Play
+
+                state: Hangman/NotStart
+                    intent: /Несогласие
+                    a: Ну как хочешь. Передумаешь - зови, я всегда готов. Просто напиши «Давай поиграем».
+            
+        state: Hangman/start
+            intent: /НеНадо
+            a: Ну погнали тогда.
+            go!: /Hangman/Play
+            
+        state: Hangman/LocalCatchAll
+            event: noMatch
+            random:
+                a: Ты чего? Я спрашиваю, надо напомнить правила «Виселицы»?
+                a: Не врубаюсь, так тебе повторить правила?
+                
+        state: Hangman/Play
+            a: успешный успех
+        
+
+    state: NoMatch || noContext = true
         event!: noMatch
-        a: Я не понял. Вы сказали: {{$request.query}}
+        random:
+            a: А по-русски можно? Я не понял.
+            a: Чего?
+            a: Сорян, не могу разобрать, что говоришь.
 
-    state: reset
-        q!: reset
-        script:
-            $session = {};
-            $client = {};
-        go!: /Start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #state: reset
+       # q!: reset
+       # script:
+        #    $session = {};
+       #     $client = {};
+       # go!: /Start
 

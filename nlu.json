@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "just_ai_games_test-256111891-TlU",
-    "name" : "just_ai_games_test-256111891-TlU",
+    "id" : "bot_dlya_igry_viseli-1000242219-diR",
+    "name" : "bot_dlya_igry_viseli-1000242219-diR",
     "folder" : "/platform"
   },
   "settings" : {
@@ -23,30 +23,134 @@
     }
   },
   "intents" : [ {
-    "path" : "/пока",
+    "path" : "/Давай поиграем",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "пока"
+      "text" : "Давай поиграем"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
+    "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/привет",
+    "path" : "/Согласие",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "привет"
+      "text" : "Да"
+    }, {
+      "text" : "Давай"
+    }, {
+      "text" : "Почему нет"
+    }, {
+      "text" : "Можно попробовать"
+    }, {
+      "text" : "Начнем"
+    }, {
+      "text" : "Начинай"
+    }, {
+      "text" : "Валяй"
+    }, {
+      "text" : "Стартуй"
+    }, {
+      "text" : "Ага"
+    }, {
+      "text" : "Хорошо"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Неа"
+    }, {
+      "text" : "Не интересует"
+    }, {
+      "text" : "Нет"
+    }, {
+      "text" : "Не хочу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие/НеНадо",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Не надо"
+    }, {
+      "text" : "Помню"
+    }, {
+      "text" : "Не напоминай"
+    }, {
+      "text" : "Нет"
+    }, {
+      "text" : "Не нужно"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Привет",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Привет"
+    }, {
+      "text" : "Здравствуйте"
+    }, {
+      "text" : "Здравствуй"
+    }, {
+      "text" : "Хай"
+    }, {
+      "text" : "Хэллоу"
+    }, {
+      "text" : "Приветики"
+    }, {
+      "text" : "Приветули"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие/Надо",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Да"
+    }, {
+      "text" : "Напомни"
+    }, {
+      "text" : "Нужно"
+    }, {
+      "text" : "Давай"
+    }, {
+      "text" : "Надо"
+    }, {
+      "text" : "Не помню"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
     "priority" : 0
   } ],
   "entities" : [ ],
-  "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
+  "enabledSystemEntities" : [ ],
   "spellerDictionary" : [ ],
   "systemEntities" : [ {
     "name" : "mystem.geo",
@@ -96,7 +200,7 @@
   }, {
     "name" : "duckling.number",
     "version" : "v2",
-    "enabled" : true
+    "enabled" : false
   }, {
     "name" : "duckling.ordinal",
     "version" : "v2",
@@ -112,7 +216,7 @@
   }, {
     "name" : "duckling.time",
     "version" : "v2",
-    "enabled" : true
+    "enabled" : false
   }, {
     "name" : "duckling.date",
     "version" : "v2",
@@ -124,19 +228,19 @@
   }, {
     "name" : "duckling.duration",
     "version" : "v2",
-    "enabled" : true
+    "enabled" : false
   }, {
     "name" : "duckling.phone-number",
     "version" : "v2",
-    "enabled" : true
+    "enabled" : false
   }, {
     "name" : "duckling.email",
     "version" : "v2",
-    "enabled" : true
+    "enabled" : false
   }, {
     "name" : "duckling.url",
     "version" : "v2",
-    "enabled" : true
+    "enabled" : false
   }, {
     "name" : "duckling.interval",
     "version" : "v2",
