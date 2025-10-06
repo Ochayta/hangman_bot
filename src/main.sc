@@ -108,9 +108,7 @@ theme: /
         state: PlayerSayLetter
             q: $Letter
             q: * [буква] $Letter
-            if: $session.usedLetters.includes($parseTree._Letter.name)
-                a: $parseTree._Letter.name
-                go!: /Play
+            a: $parseTree._Letter.name
             a: успех
 
                 
