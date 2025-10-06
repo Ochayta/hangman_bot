@@ -90,6 +90,8 @@ theme: /
             $session.guess = $session.word.charAt(0).toUpperCase() + $session.word.slice(1)
             
             $session.numErrors = 0
+            $session.usedLetters = []
+            
             $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.guess, "Загадал тебе слово! Смотри: " + $session.guess]))
             
             } else { 
@@ -105,7 +107,10 @@ theme: /
                     
         state: PlayerSayLetter
             q: $Letter
-            q: [буква] $Letter
+            q: * [буква] $Letter
+            if: $session.usedLetters.includes($parseTree._Letter.name)
+                a: $parseTree._Letter.name
+                go!: /Play
             a: успех
 
                 
