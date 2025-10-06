@@ -3,7 +3,7 @@ function chooseRandKey(keys) {
 }
 
 function isWordGuessed(word, usedLetters) {
-    var uniqueLetters = new Set(word.split(''));
+    var uniqueLetters = new Set(word.split(''))
     
     for (var letter of uniqueLetters) {
         if (!usedLetters.includes(letter)) {
