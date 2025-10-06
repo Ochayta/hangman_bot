@@ -108,9 +108,13 @@ theme: /
         state: PlayerSayLetter
             q: $Letter
             q: * [буква] $Letter
-            if: $session.usedLetters.indexOf($parseTree._Letter) == -1
-                a: {{ $parseTree._Letter }}
-                go!: /Play
+            script:
+                if ($session.usedLetters.indexOf($parseTree._Letter) == -1) {
+                    $session.usedLetters.push($parseTree._Letter)
+                    $reactions.answer("Эта буква уже была! Что-то другое называй.")
+                    $reactions.answer($session.guess)
+                    $reactions.transition("/Play")
+                }
             a: успех
 
                 
