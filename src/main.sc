@@ -92,12 +92,14 @@ theme: /
             $session.numErrors = 0
             $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.guess, "Загадал тебе слово! Смотри: " + $session.guess]))
             
-            } else {
+            } else { 
                 
                 if ($session.numErrors == 6) {
                     $reactions.answer("А все, попытки закончились! Слово было " + $session.guess)
                     $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».")
-                    $session.guess = 0 }
+                    $session.guess = 0 
+                    
+                }
                 
     
     state: NoMatch || noContext = true
