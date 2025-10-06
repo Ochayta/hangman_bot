@@ -19,7 +19,6 @@ patterns:
         var id = $parseTree.HangmanGameData[0].value;
         return $HangmanGameData[id].value;
         }
-    $Letter = $regexp_i<\b[а-яёА-ЯЁ]\b>
 
 theme: /
 
@@ -102,7 +101,6 @@ theme: /
                 else {
                     $reactions.answer(selectRandomArg(["Какой еще вариант хочешь проверить?", "Что теперь? Жду твоих догадок.", "Ходи, называй что-нибудь."]))
                 }
-            
 
     
     state: NoMatch || noContext = true
