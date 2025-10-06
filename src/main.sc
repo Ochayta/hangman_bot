@@ -78,15 +78,6 @@ theme: /
                 
     state: Play
         intent!: /Новая игра
-        script:
-            key = $HangmanGameData[chooseRandKey($session.keys)]
-            $reactions.answer(key)
-            word = key.value.word
-            $session.guess = word.charAt(0).toUpperCase() + word.slice(1)
-            $session.numErrors = 0
-            $reactions.answer("Хе, придумал! Вот твое слово:")
-            $reactions.answer($session.guess)
-            $reactions.answer(word)
         a: успех
 
     
