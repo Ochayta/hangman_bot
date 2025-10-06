@@ -18,7 +18,7 @@ patterns:
     $Word = $entity<HangmanGameData> || converter = function ($parseTree) {
         var id = $parseTree.HangmanGameData[0].value;
         return $HangmanGameData[id].value;
-        };
+        }
     $Letter = $regexp_i<\b[а-яёА-ЯЁ]\b>
 
 theme: /
