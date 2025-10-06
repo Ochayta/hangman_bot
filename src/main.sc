@@ -68,6 +68,7 @@ theme: /
             a: Ну погнали тогда.
             script:
                 $session.keys = Object.keys($HangmanGameData)
+                $session.guess = 0
             go!:/Play
 
         state: LocalCatchAll
@@ -79,14 +80,13 @@ theme: /
     state: Play
         intent!: /Новая игра
         script:
+            if ($session.guess == 0) {
             $session.key = chooseRandKey($session.keys)
-            $reactions.answer($session.key)
             $session.word = $HangmanGameData[$session.key].value.word
             $session.guess = $session.word.charAt(0).toUpperCase() + $session.word.slice(1)
             $session.numErrors = 0
-            $reactions.answer("Хе, придумал! Вот твое слово:")
-            $reactions.answer($session.guess)
-            $reactions.answer($session.word)
+            $reactions.answer("Хе, придумал! Вот твое слово:", $session.guess)
+            }
         a: успех
 
     
