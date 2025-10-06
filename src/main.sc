@@ -85,7 +85,7 @@ theme: /
             $session.word = $HangmanGameData[$session.key].value.word
             $session.guess = $session.word.charAt(0).toUpperCase() + $session.word.slice(1)
             $session.numErrors = 0
-            $reactions.answer("Хе, придумал! Вот твое слово:", $session.guess)
+            $reactions.answer("Хе, придумал! Вот твое слово:" + $session.guess)
             }
         a: успех
 
