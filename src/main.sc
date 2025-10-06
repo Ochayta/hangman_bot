@@ -68,7 +68,7 @@ theme: /
             a: Ну погнали тогда.
             script:
                 $session.keys = Object.keys($HangmanGameData)
-            go:/Play
+            go!:/Play
 
         state: LocalCatchAll
             event: noMatch
@@ -78,9 +78,6 @@ theme: /
                 
     state: Play
         intent!: /Новая игра
-        script:
-            $session.key = $HangmanGameData[chooseRandKey($session.keys)]
-            $reactions.answer($session.key)
         a: успех
 
     
