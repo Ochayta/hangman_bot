@@ -27,6 +27,9 @@ theme: /
         intent!: /Привет 
         script:
             $session = {}
+            $client = {}
+            $temp = {}
+            $response = {}
         a: Слышишь, может в "Виселицу" разок сыгранём?
         go!: /EntryPoint/Согласен?
             
@@ -43,7 +46,7 @@ theme: /
     state: Hangman
         intent!: /Давай поиграем
         script:
-            $session.keys = Object.keys($HangmanGameData)
+            $session.keys = Object.keys(HangmanGameData)
         a: Хорош! Кста, а ты правила-то помнишь? Могу напомнить, если надо.
         
         state: Rules
@@ -75,10 +78,7 @@ theme: /
                 
     state: Play || modal = true
         intent!: /Новая игра
-        script:
-            key = $HangmanGameData[chooseRandKey($session.keys)]
-            $reactions.answer(key)
-
+        a: успех
 
     
     state: NoMatch || noContext = true
