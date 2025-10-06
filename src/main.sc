@@ -19,6 +19,7 @@ patterns:
         var id = $parseTree.HangmanGameData[0].value;
         return $HangmanGameData[id].value;
         }
+    $Letter = $regexp_i<\b[а-яёА-ЯЁ]\b>
 
 theme: /
 
@@ -96,11 +97,14 @@ theme: /
                 if ($session.numErrors == 6) {
                     $reactions.answer("А все, попытки закончились! Слово было " + $session.guess)
                     $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».")
-                    $session.guess == 0 }
+                    $session.guess = 0 }
                     
                 else {
                     $reactions.answer(selectRandomArg(["Какой еще вариант хочешь проверить?", "Что теперь? Жду твоих догадок.", "Ходи, называй что-нибудь."])) }
-        a: успех
+        
+        state: PlayerSayLetter
+            q: $Letter
+            a: успех
 
     
     state: NoMatch || noContext = true
