@@ -105,6 +105,7 @@ theme: /
                     
         state: PlayerSayLetter
             q: $Letter
+            q: [буква] $Letter
             a: успех
 
                 
