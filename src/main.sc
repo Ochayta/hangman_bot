@@ -65,9 +65,9 @@ theme: /
             
         state: Start
             intent: /Несогласие/НеНадо
+            a: Ну погнали тогда.
             script:
                 $session.keys = Object.keys($HangmanGameData)
-            a: Ну погнали тогда.
             go!:/Play
 
         state: LocalCatchAll
