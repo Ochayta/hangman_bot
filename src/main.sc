@@ -102,10 +102,6 @@ theme: /
                 else {
                     $reactions.answer(selectRandomArg(["Какой еще вариант хочешь проверить?", "Что теперь? Жду твоих догадок.", "Ходи, называй что-нибудь."]))
                 }
-        
-        state: PlayerSayLetter
-            q: $Letter
-            a: успех
             
 
     
