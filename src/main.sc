@@ -6,6 +6,8 @@ require: text/text.sc
 
 require: common.js
     module = sys.zb-common
+    
+require: scripts/functions.js
 
 # Для игры Виселица
 require: hangmanGameData.csv
@@ -23,6 +25,11 @@ theme: /
     state: EntryPoint
         q!: $regex</start>
         intent!: /Привет 
+        script:
+            $session = {}
+            $client = {}
+            $temp = {}
+            $response = {}
         a: Слышишь, может в "Виселицу" разок сыгранём?
         go!: /EntryPoint/Согласен?
             
@@ -37,7 +44,9 @@ theme: /
                 a: Ага, ломаешься, значит! Как надумаешь, пиши «Давай поиграем».
         
     state: Hangman
-        intent!: /Давай поиграем 
+        intent!: /Давай поиграем
+        script:
+            $session.keys = Object.keys($HangmanGameData)
         a: Хорош! Кста, а ты правила-то помнишь? Могу напомнить, если надо.
         
         state: Rules
@@ -59,18 +68,28 @@ theme: /
         state: Start
             intent: /Несогласие/НеНадо
             a: Ну погнали тогда.
-            go!: /Hangman/Play
-            
+            go!: Play
+
         state: LocalCatchAll
             event: noMatch
             random:
                 a: Ты чего? Я спрашиваю, надо напомнить правила «Виселицы»?
                 a: Не врубаюсь, так тебе повторить правила?
                 
-        state: Play
-            a: успешный успех
-        
+    state: Play || modal = true
+        intent!: /Новая игра
+        script:
+            key = $HangmanGameData[chooseRandKey($session.keys)]
+            word = key.value.word
+            $session.guess = word.charAt(0).toUpperCase() + word.slice(1)
+            $session.numErrors = 0
+            $reactions.answer("Хе, придумал! Вот твое слово:")
+            $reactions.answer($session.guess)
+            $reactions.answer(word)
+            $reactions.answer(key)
 
+
+    
     state: NoMatch || noContext = true
         event!: noMatch
         random:
@@ -99,4 +118,3 @@ theme: /
         #    $session = {};
        #     $client = {};
        # go!: /Start
-
