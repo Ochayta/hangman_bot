@@ -95,10 +95,14 @@ theme: /
             } else { 
                 
                 if ($session.numErrors == 6) {
-                    $reactions.answer("А все, попытки закончились! Слово было " + $session.guess);
-                    $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».");
+                    $reactions.answer("А все, попытки закончились! Слово было " + $session.guess)
+                    $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».")
                     $session.guess = 0
-                }
+                
+                } else {
+                    $reactions.answer(selectRandomArg(["Какой еще вариант хочешь проверить?", "Что теперь? Жду твоих догадок.", "Ходи, называй что-нибудь."]))
+                    }}
+
                 
     
     state: NoMatch || noContext = true
