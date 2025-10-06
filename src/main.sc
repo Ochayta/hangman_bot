@@ -108,7 +108,7 @@ theme: /
         state: PlayerSayLetter
             q: $Letter
             q: * [буква] $Letter
-            a: {{ $parseTree._Letter.name }}
+            a: {{ $parseTree._Letter }}
             a: успех
 
                 
