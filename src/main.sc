@@ -114,6 +114,18 @@ theme: /
                     
                     $session.usedLetters.push(letter)
                     
+                    if ($session.word.indexOf(letter) !== -1)) {
+                        
+                        if isWordGuessed($session.word, $session.usedLetters) {
+                            
+                            $reactions.answer("Еееее, победа!")
+                            $reactions.answer($session.guess)
+                            $reactions.answer("Го еще разик? Если хочешь, напиши мне «Новая игра».")
+                            
+                            }
+                        
+                        }
+                    
                 } else {
                     
                     $reactions.answer("Эта буква уже была! Что-то другое называй.")
