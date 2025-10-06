@@ -68,7 +68,7 @@ theme: /
             a: Ну погнали тогда.
             script:
                 $session.keys = Object.keys($HangmanGameData)
-            go!:/Play
+            go:/Play
 
         state: LocalCatchAll
             event: noMatch
