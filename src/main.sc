@@ -97,7 +97,6 @@ theme: /
                 if ($session.numErrors == 6) {
                     $reactions.answer("А все, попытки закончились! Слово было " + $session.guess)
                     $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».")
-                    $session.guess = 0 
                     
                 }
                 
