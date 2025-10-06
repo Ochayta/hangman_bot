@@ -109,12 +109,18 @@ theme: /
             q: $Letter
             q: * [буква] $Letter
             script:
-                if ($session.usedLetters.indexOf($parseTree._Letter) == -1) {
-                    $session.usedLetters.push($parseTree._Letter)
+                var letter = $parseTree._Letter.toLowerCase()
+                if ($session.usedLetters.indexOf(letter) == -1) {
+                    
+                    $session.usedLetters.push(letter)
+                    
+                } else {
+                    
                     $reactions.answer("Эта буква уже была! Что-то другое называй.")
                     $reactions.answer($session.guess)
                     $reactions.transition("/Play")
-                }
+                    
+                    }
             a: успех
 
                 
