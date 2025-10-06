@@ -65,8 +65,6 @@ theme: /
             
         state: Start
             intent: /Несогласие/НеНадо
-            script:
-                $session.keys = Object.keys($HangmanGameData)
             a: Ну погнали тогда.
             go!: Play
 
