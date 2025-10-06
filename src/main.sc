@@ -45,8 +45,6 @@ theme: /
         
     state: Hangman
         intent!: /Давай поиграем
-        script:
-            $session.keys = Object.keys(HangmanGameData)
         a: Хорош! Кста, а ты правила-то помнишь? Могу напомнить, если надо.
         
         state: Rules
