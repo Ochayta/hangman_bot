@@ -78,6 +78,9 @@ theme: /
                 
     state: Play
         intent!: /Новая игра
+        script:
+            $session.key = $HangmanGameData[chooseRandKey($session.keys)]
+            $reactions.answer($session.key)
         a: успех
 
     
