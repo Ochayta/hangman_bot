@@ -27,9 +27,6 @@ theme: /
         intent!: /Привет 
         script:
             $session = {}
-            $client = {}
-            $temp = {}
-            $response = {}
         a: Слышишь, может в "Виселицу" разок сыгранём?
         go!: /EntryPoint/Согласен?
             
