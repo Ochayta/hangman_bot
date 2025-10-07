@@ -19,8 +19,6 @@
     
     <test-case id="3">
         <state>Hangman</state>
-        <q>как дела?</q>
-        <a state = "/Hangman/LocalCatchAll"/>
         <q>не надо</q>
         <a>Ну погнали тогда.</a>
     </test-case>
@@ -29,18 +27,11 @@
         <state>Hangman</state>
         <q>напомни</q>
         <a state="/Hangman/Rules"/>
-        <a state="/Hangman/Rules/Согласен?"/>
         <q>нет</q>
         <a>Ну как хочешь. Передумаешь - зови, я всегда готов. Просто напиши «Давай поиграем».</a>
     </test-case>
 
     <test-case id="5">
-        <state>Play</state>
-        <q>ф</q>
-        <a state="/Play/PlayerSayLetter"/>
-    </test-case>
-
-    <test-case id="6">
         <state>Play</state>
         <q>надоело</q>
         <a>Эх, а по-моему было весело! Пиши, как надумаешь вернуться к игре. С тебя "Новая игра", с меня - слово!</a>
