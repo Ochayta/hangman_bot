@@ -28,8 +28,6 @@ theme: /
         intent!: /Привет 
         script:
             $session = {}
-            $client = {}
-            $temp = {}
             $response = {}
         a: Слышишь, может в "Виселицу" разок сыгранём?
         go!: /EntryPoint/Согласен?
@@ -151,6 +149,17 @@ theme: /
                     
                     }
 
+        state: EndGame
+            intent!: /endThisGame
+            a: Эх, а по-моему было весело! Пиши, как надумаешь вернуться к игре. С тебя "Новая игра", с меня - слово!
+            script:
+                $session.guess = 0
+            
+        state: CatchAll
+            event: NoMatch
+            random:
+                a: Не понимаю, о чем ты. Будь другом, назови букву или сразу все слово.
+                a: Не сбивай меня, пж. В свой ход ты называешь букву или слово целиком.
                 
     
     state: NoMatch || noContext = true
@@ -159,25 +168,3 @@ theme: /
             a: А по-русски можно? Я не понял.
             a: Чего?
             a: Сорян, не могу разобрать, что говоришь.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #state: reset
-       # q!: reset
-       # script:
-        #    $session = {};
-       #     $client = {};
-       # go!: /Start

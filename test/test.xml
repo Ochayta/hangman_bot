@@ -1,14 +1,52 @@
 <test>
     <test-case id="1">
         <q>/start</q>
-        <a state = "/EntryPoint"/>
+        <a>Слышишь, может в "Виселицу" разок сыгранём?</a>
         <q>нет</q>
         <a state = "/EntryPoint/Согласен?/Нет"/>
+        <q>Давай поиграем</q>
+        <a state = "/Hangman"/>
     </test-case>
+    
     <test-case id="2">
         <q>/start</q>
         <a state = "/EntryPoint"/>
         <q>как дела?</q>
         <a state = "/NoMatch"/>
+        <q>давай</q>
+        <a state = "/Hangman"/>
+    </test-case>
+    
+    <test-case id="3">
+        <q>/start</q>
+        <a>Слышишь, может в "Виселицу" разок сыгранём?</a>
+        <q>да</q>
+        <a state = "/EntryPoint/Согласен?/Да"/>
+        <a state = "/Hangman"/>
+    </test-case>
+
+    <test-case id="4">
+        <q>/start</q>
+        <a>Привет! Предлагаю сыграть в игру "Города". Кто загадывает город: компьютер или пользователь?</a>
+        <q>не я</q>
+        <a state="/start/Computer"></a>
+        <a state="/LetsPlayCitiesGame"></a>
+    </test-case>
+
+    <test-case id="5">
+        <state>LetsPlayCitiesGame</state>
+        <q>сдаюсь</q>
+        <a>Очень жаль! Если передумаешь — скажи "давай поиграем"</a>
+        <q>играть</q>
+        <a>Привет! Предлагаю сыграть в игру "Города". Кто загадывает город: компьютер или пользователь?</a>
+    </test-case>
+
+    <test-case id="6">
+        <q>/start</q>
+        <a>Привет! Предлагаю сыграть в игру "Города". Кто загадывает город: компьютер или пользователь?</a>
+        <q>не ты</q>
+        <a>Назовите город</a>
+        <q>Спб</q>
+        <a>Используйте только полные названия городов</a>
     </test-case>
 </test>
