@@ -92,7 +92,7 @@ theme: /
             $session.numErrors = 0
             $session.usedLetters = []
             
-            $session.hidden = displayWord($session.word)
+            $session.hidden = displayWord($session.word, $session.usedLetters)
             $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.hidden, "Загадал тебе слово! Смотри: " + $session.hidden]))
             
             } else { 
@@ -126,7 +126,7 @@ theme: /
                             
                         } else {
                             
-                            $session.hidden = displayWord($session.word)
+                            $session.hidden = displayWord($session.word, $session.usedLetters)
                             $reactions.answer("О-о-откройте букву:" + $session.hidden)
                             $reactions.transition("/Play")
                             
@@ -134,7 +134,7 @@ theme: /
                         
                     } else {
                         
-                        $session.hidden = displayWord($session.word)
+                        $session.hidden = displayWord($session.word, $session.usedLetters)
                         $reactions.answer($session.hidden)
                         $session.numErrors = $session.numErrors + 1
                         $reactions.answer("Не-а, такой буквы нет. У тебя еще " + 6-$session.numErrors + "/6 попыток.")
@@ -144,7 +144,7 @@ theme: /
                     
                 } else {
                     
-                    $session.hidden = displayWord($session.word)
+                    $session.hidden = displayWord($session.word, $session.usedLetters)
                     $reactions.answer("Эта буква уже была! Что-то другое называй.")
                     $reactions.answer($session.hidden)
                     $reactions.transition("/Play")
