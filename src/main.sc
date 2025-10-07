@@ -76,7 +76,7 @@ theme: /
                 a: Ты чего? Я спрашиваю, надо напомнить правила «Виселицы»?
                 a: Не врубаюсь, так тебе повторить правила?
                 
-    state: Play || modal = true
+    state: Play
         intent!: /Новая игра
         script:
             if ($session.guess === 0) {
