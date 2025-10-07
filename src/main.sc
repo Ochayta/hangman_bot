@@ -77,6 +77,7 @@ theme: /
                 a: Не врубаюсь, так тебе повторить правила?
                 
     state: Play
+        q: Новая игра
         script:
             if ($session.guess === 0) {
                 
