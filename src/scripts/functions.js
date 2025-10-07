@@ -12,4 +12,3 @@ function isWordGuessed(word, usedLetters) {
     }
     return true;
 }
-}
