@@ -78,30 +78,30 @@ theme: /
                 
     state: Play
         script:
-                if ($session.guess === 0) {
+            if ($session.guess === 0) {
                 
-                $session.key = chooseRandKey($session.keys)
-                $session.keys.splice($session.key, 1)
+            $session.key = chooseRandKey($session.keys)
+            $session.keys.splice($session.key, 1)
             
-                $session.word = $HangmanGameData[$session.key].value.word
-                $session.guess = $session.word.charAt(0).toUpperCase() + $session.word.slice(1)
+            $session.word = $HangmanGameData[$session.key].value.word
+            $session.guess = $session.word.charAt(0).toUpperCase() + $session.word.slice(1)
             
-                $session.numErrors = 0
-                $session.usedLetters = []
+            $session.numErrors = 0
+            $session.usedLetters = []
             
-                $session.hidden = displayWord($session.word, $session.usedLetters)
-                $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.hidden, "Загадал тебе слово! Смотри: " + $session.hidden]))
+            $session.hidden = displayWord($session.word, $session.usedLetters)
+            $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.hidden, "Загадал тебе слово! Смотри: " + $session.hidden]))
             
-                } else { 
+            } else { 
                 
-                    if ($session.numErrors === 6) {
-                        $reactions.answer("А все, попытки закончились! Слово было " + $session.guess)
-                        $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».")
-                        $session.guess = 0
+                if ($session.numErrors === 6) {
+                    $reactions.answer("А все, попытки закончились! Слово было " + $session.guess)
+                    $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».")
+                    $session.guess = 0
                 
-                    } else {
-                        $reactions.answer(selectRandomArg(["Какой еще вариант хочешь проверить?", "Что теперь? Жду твоих догадок.", "Ходи, называй что-нибудь."]))
-                    }}
+                } else {
+                    $reactions.answer(selectRandomArg(["Какой еще вариант хочешь проверить?", "Что теперь? Жду твоих догадок.", "Ходи, называй что-нибудь."]))
+                }}
                     
         state: PlayerSayLetter
             q: $Letter
