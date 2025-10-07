@@ -23,18 +23,6 @@
     }
   },
   "intents" : [ {
-    "path" : "/Давай поиграем",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "Давай поиграем"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
     "path" : "/Согласие",
     "enabled" : true,
     "shared" : false,
@@ -148,22 +136,6 @@
       "text" : "Надо"
     }, {
       "text" : "Не помню"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/Новая игра",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "Новая игра"
-    }, {
-      "text" : "Хочу еще раз"
-    }, {
-      "text" : "Новый раунд"
     } ],
     "classificationRules" : {
       "refs" : [ ]
