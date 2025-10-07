@@ -91,7 +91,7 @@ theme: /
             $session.usedLetters = []
             
             $session.hidden = displayWord($session.word, $session.usedLetters)
-            $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.hidden, "Загадал тебе слово! Смотри: " + $session.hidden]))
+            $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.hidden + $session.guess, "Загадал тебе слово! Смотри: " + $session.hidden + $session.guess]))
             
             } else { 
                 
@@ -125,7 +125,7 @@ theme: /
                         } else {
                             
                             $session.hidden = displayWord($session.word, $session.usedLetters)
-                            $reactions.answer("О-о-откройте букву: " + $session.hidden)
+                            $reactions.answer("О-о-откройте букву: " + $session.hidden + $session.guess)
                             $reactions.transition("/Play")
                             
                             }
@@ -135,7 +135,7 @@ theme: /
                         $session.hidden = displayWord($session.word, $session.usedLetters)
                         $session.numErrors = $session.numErrors + 1
                         $reactions.answer("Не-а, такой буквы нет. Потрачено " + $session.numErrors + "/6 попыток.")
-                        $reactions.answer($session.hidden)
+                        $reactions.answer($session.hidden + $session.guess)
                         $reactions.transition("/Play")
                         
                         }
@@ -144,7 +144,7 @@ theme: /
                     
                     $session.hidden = displayWord($session.word, $session.usedLetters)
                     $reactions.answer("Эта буква уже была! Что-то другое называй.")
-                    $reactions.answer($session.hidden)
+                    $reactions.answer($session.hidden + $session.guess)
                     $reactions.transition("/Play")
                     
                     }
