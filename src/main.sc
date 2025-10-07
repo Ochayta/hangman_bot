@@ -116,7 +116,7 @@ theme: /
                     
                     if ($session.word.indexOf(letter) !== -1) {
                         
-                        if isWordGuessed($session.word, $session.usedLetters) {
+                        if (isWordGuessed($session.word, $session.usedLetters)) {
                             
                             $reactions.answer("Еееее, победа!")
                             $reactions.answer($session.guess)
