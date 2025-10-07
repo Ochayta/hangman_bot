@@ -154,13 +154,6 @@ theme: /
             a: Эх, а по-моему было весело! Пиши, как надумаешь вернуться к игре. С тебя "Новая игра", с меня - слово!
             script:
                 $session.guess = 0
-        
-        state: NewGame
-        #на случай, когда пользователь инициирует новую игру во время текущей игры
-        q: Новая игра
-        script:
-            $session.guess = 0
-            $reactions.transition("/Play")
             
         state: CatchAll
             event: NoMatch

@@ -16,15 +16,8 @@
         <q>давай</q>
         <a state = "/Hangman"/>
     </test-case>
-    
-    <test-case id="3">
-        <state>Hangman</state>
-        <q>не надо</q>
-        <a>Ну погнали тогда.</a>
-        <a state="/Play"/>
-    </test-case>
 
-    <test-case id="4">
+    <test-case id="3">
         <state>Hangman</state>
         <q>напомни</q>
         <a state="/Hangman/Rules"/>
@@ -33,7 +26,7 @@
         <a>Ну как хочешь. Передумаешь - зови, я всегда готов. Просто напиши «Давай поиграем».</a>
     </test-case>
 
-    <test-case id="5">
+    <test-case id="4">
         <state>Play</state>
         <q>надоело</q>
         <a>Эх, а по-моему было весело! Пиши, как надумаешь вернуться к игре. С тебя "Новая игра", с меня - слово!</a>
