@@ -114,7 +114,7 @@ theme: /
                     
                     $session.usedLetters.push(letter)
                     
-                    if ($session.word.indexOf(letter) !=== -1) {
+                    if ($session.word.indexOf(letter) !== -1) {
                         
                         if (isWordGuessed($session.word, $session.usedLetters)) {
                             
