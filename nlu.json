@@ -148,6 +148,22 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/Новая игра",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Новая игра"
+    }, {
+      "text" : "Хочу еще раз"
+    }, {
+      "text" : "Новый раунд"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ ],
   "enabledSystemEntities" : [ ],

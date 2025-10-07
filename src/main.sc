@@ -121,6 +121,7 @@ theme: /
                             $reactions.answer("Еееее, победа!")
                             $reactions.answer($session.guess)
                             $reactions.answer("Го еще разик? Если хочешь, напиши мне «Новая игра».")
+                            $session.guess = 0
                             
                             }
                         
