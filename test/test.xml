@@ -18,11 +18,11 @@
     </test-case>
     
     <test-case id="3">
-        <q>/start</q>
-        <a>Слышишь, может в "Виселицу" разок сыгранём?</a>
-        <q>да</q>
-        <a state = "/EntryPoint/Согласен?/Да"/></a>
-        <a state = "/Hangman"/></a>
+        <state>Hangman</state>
+        <q>как дела?</q>
+        <a state = "/Hangman/LocalCatchAll"/></a>
+        <q>не надо</q>
+        <a>Ну погнали тогда.</a>
     </test-case>
 
     <test-case id="4">
@@ -35,19 +35,14 @@
     </test-case>
 
     <test-case id="5">
-        <state>Hangman</state>
-        <q>как дела?</q>
-        <a state = "/Hangman/LocalCatchAll"/></a>
-        <q> </q>
-        <a>Привет! Предлагаю сыграть в игру "Города". Кто загадывает город: компьютер или пользователь?</a>
+        <state>Play</state>
+        <q>ф</q>
+        <a state="/Play/PlayerSayLetter"></a>
     </test-case>
 
     <test-case id="6">
-        <q>/start</q>
-        <a>Привет! Предлагаю сыграть в игру "Города". Кто загадывает город: компьютер или пользователь?</a>
-        <q>не ты</q>
-        <a>Назовите город</a>
-        <q>Спб</q>
-        <a>Используйте только полные названия городов</a>
+        <state>Play</state>
+        <q>надоело</q>
+        <a>Эх, а по-моему было весело! Пиши, как надумаешь вернуться к игре. С тебя "Новая игра", с меня - слово!</a>
     </test-case>
 </test>
