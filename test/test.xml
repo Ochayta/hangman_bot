@@ -3,41 +3,42 @@
         <q>/start</q>
         <a>Слышишь, может в "Виселицу" разок сыгранём?</a>
         <q>нет</q>
-        <a state = "/EntryPoint/Согласен?/Нет"/>
+        <a state = "/EntryPoint/Согласен?/Нет"/></a>
         <q>Давай поиграем</q>
-        <a state = "/Hangman"/>
+        <a state = "/Hangman"/></a>
     </test-case>
     
     <test-case id="2">
         <q>/start</q>
-        <a state = "/EntryPoint"/>
+        <a state = "/EntryPoint"/></a>
         <q>как дела?</q>
-        <a state = "/NoMatch"/>
+        <a state = "/NoMatch"/></a>
         <q>давай</q>
-        <a state = "/Hangman"/>
+        <a state = "/Hangman"/></a>
     </test-case>
     
     <test-case id="3">
         <q>/start</q>
         <a>Слышишь, может в "Виселицу" разок сыгранём?</a>
         <q>да</q>
-        <a state = "/EntryPoint/Согласен?/Да"/>
-        <a state = "/Hangman"/>
+        <a state = "/EntryPoint/Согласен?/Да"/></a>
+        <a state = "/Hangman"/></a>
     </test-case>
 
     <test-case id="4">
-        <q>/start</q>
-        <a>Привет! Предлагаю сыграть в игру "Города". Кто загадывает город: компьютер или пользователь?</a>
-        <q>не я</q>
-        <a state="/start/Computer"></a>
-        <a state="/LetsPlayCitiesGame"></a>
+        <state>Hangman</state>
+        <q>напомни</q>
+        <a state="/Hangman/Rules"></a>
+        <a state="/Hangman/Rules/Согласен?"></a>
+        <q>нет</q>
+        <a>Ну как хочешь. Передумаешь - зови, я всегда готов. Просто напиши «Давай поиграем».</a>
     </test-case>
 
     <test-case id="5">
-        <state>LetsPlayCitiesGame</state>
-        <q>сдаюсь</q>
-        <a>Очень жаль! Если передумаешь — скажи "давай поиграем"</a>
-        <q>играть</q>
+        <state>Hangman</state>
+        <q>как дела?</q>
+        <a state = "/Hangman/LocalCatchAll"/></a>
+        <q> </q>
         <a>Привет! Предлагаю сыграть в игру "Города". Кто загадывает город: компьютер или пользователь?</a>
     </test-case>
 

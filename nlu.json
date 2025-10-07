@@ -164,6 +164,26 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/endThisGame",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хватит"
+    }, {
+      "text" : "надоело"
+    }, {
+      "text" : "стоп"
+    }, {
+      "text" : "стоп игра"
+    }, {
+      "text" : "сдаюсь"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ ],
   "enabledSystemEntities" : [ ],
