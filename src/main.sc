@@ -92,7 +92,8 @@ theme: /
             $session.numErrors = 0
             $session.usedLetters = []
             
-            $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.guess, "Загадал тебе слово! Смотри: " + $session.guess]))
+            $session.hidden = displayWord($session.word)
+            $reactions.answer(selectRandomArg(["Хе, придумал! Вот твое слово: " + $session.hidden, "Загадал тебе слово! Смотри: " + $session.hidden]))
             
             } else { 
                 
@@ -125,29 +126,30 @@ theme: /
                             
                         } else {
                             
-                            $reactions.answer("О-о-откройте букву:")
-                            $reactions.answer($session.guess)
+                            $session.hidden = displayWord($session.word)
+                            $reactions.answer("О-о-откройте букву:" + $session.hidden)
                             $reactions.transition("/Play")
                             
                             }
                         
                     } else {
                         
-                        $reactions.answer("Не-а, такой буквы нет.")
-                        $reactions.answer($session.guess)
+                        $session.hidden = displayWord($session.word)
+                        $reactions.answer($session.hidden)
                         $session.numErrors = $session.numErrors + 1
+                        $reactions.answer("Не-а, такой буквы нет. У тебя еще " + 6-$session.numErrors + "/6 попыток.")
                         $reactions.transition("/Play")
                         
                         }
                     
                 } else {
                     
+                    $session.hidden = displayWord($session.word)
                     $reactions.answer("Эта буква уже была! Что-то другое называй.")
-                    $reactions.answer($session.guess)
+                    $reactions.answer($session.hidden)
                     $reactions.transition("/Play")
                     
                     }
-            a: успех
 
                 
     
