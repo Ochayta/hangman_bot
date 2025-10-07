@@ -127,7 +127,7 @@ theme: /
                         } else {
                             
                             $session.hidden = displayWord($session.word, $session.usedLetters)
-                            $reactions.answer("О-о-откройте букву:" + $session.hidden)
+                            $reactions.answer("О-о-откройте букву: " + $session.hidden)
                             $reactions.transition("/Play")
                             
                             }
@@ -135,9 +135,9 @@ theme: /
                     } else {
                         
                         $session.hidden = displayWord($session.word, $session.usedLetters)
-                        $reactions.answer($session.hidden)
                         $session.numErrors = $session.numErrors + 1
                         $reactions.answer("Не-а, такой буквы нет. Потрачено " + $session.numErrors + "/6 попыток.")
+                        $reactions.answer($session.hidden)
                         $reactions.transition("/Play")
                         
                         }
