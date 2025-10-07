@@ -78,6 +78,8 @@ theme: /
                 
     state: Play
         intent!: /Новая игра
+        if: !$session.keys || !$session.guess
+        go!: /Start
         script:
             if ($session.guess === 0) {
                 
