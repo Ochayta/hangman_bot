@@ -79,7 +79,7 @@ theme: /
     state: Play
         intent!: /Новая игра
         if: !$session.keys || !$session.guess
-        go!: /Hangman/Start
+            go!: /Hangman/Start
         script:
             if ($session.guess === 0) {
                 
