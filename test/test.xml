@@ -3,24 +3,24 @@
         <q>/start</q>
         <a>Слышишь, может в "Виселицу" разок сыгранём?</a>
         <q>нет</q>
-        <a state = "/EntryPoint/Согласен?/Нет"/></a>
+        <a state = "/EntryPoint/Согласен?/Нет"/>
         <q>Давай поиграем</q>
-        <a state = "/Hangman"/></a>
+        <a state = "/Hangman"/>
     </test-case>
     
     <test-case id="2">
         <q>/start</q>
-        <a state = "/EntryPoint"/></a>
+        <a state = "/EntryPoint"/>
         <q>как дела?</q>
-        <a state = "/NoMatch"/></a>
+        <a state = "/NoMatch"/>
         <q>давай</q>
-        <a state = "/Hangman"/></a>
+        <a state = "/Hangman"/>
     </test-case>
     
     <test-case id="3">
         <state>Hangman</state>
         <q>как дела?</q>
-        <a state = "/Hangman/LocalCatchAll"/></a>
+        <a state = "/Hangman/LocalCatchAll"/>
         <q>не надо</q>
         <a>Ну погнали тогда.</a>
     </test-case>
@@ -28,8 +28,8 @@
     <test-case id="4">
         <state>Hangman</state>
         <q>напомни</q>
-        <a state="/Hangman/Rules"></a>
-        <a state="/Hangman/Rules/Согласен?"></a>
+        <a state="/Hangman/Rules"/>
+        <a state="/Hangman/Rules/Согласен?"/>
         <q>нет</q>
         <a>Ну как хочешь. Передумаешь - зови, я всегда готов. Просто напиши «Давай поиграем».</a>
     </test-case>
@@ -37,7 +37,7 @@
     <test-case id="5">
         <state>Play</state>
         <q>ф</q>
-        <a state="/Play/PlayerSayLetter"></a>
+        <a state="/Play/PlayerSayLetter"/>
     </test-case>
 
     <test-case id="6">
