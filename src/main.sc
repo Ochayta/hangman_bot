@@ -137,7 +137,7 @@ theme: /
                         $session.hidden = displayWord($session.word, $session.usedLetters)
                         $reactions.answer($session.hidden)
                         $session.numErrors = $session.numErrors + 1
-                        $reactions.answer("Не-а, такой буквы нет. У тебя еще " + 6-$session.numErrors + "/6 попыток.")
+                        $reactions.answer("Не-а, такой буквы нет. Потрачено " + $session.numErrors + "/6 попыток.")
                         $reactions.transition("/Play")
                         
                         }
