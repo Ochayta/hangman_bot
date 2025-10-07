@@ -3,12 +3,24 @@ function chooseRandKey(keys) {
 }
 
 function isWordGuessed(word, usedLetters) {
-    var cleanWord = word.toLowerCase().replace(/\s/g, '');
-    for (var i = 0; i < cleanWord.length; i++) {
-        var letter = cleanWord[i];
+    for (var i = 0; i < word.length; i++) {
+        var letter = word[i];
         if (usedLetters.indexOf(letter) === -1) {
             return false;
         }
     }
     return true;
+}
+
+function displayWord(word, usedLetters) {
+    var result = "";
+    for (var i = 0; i < word.length; i++) {
+        var letter = word[i];
+        if (usedLetters.indexOf(letter) !== -1) {
+            result += letter.toUpperCase() + " ";
+        } else {
+            result += "_ ";
+        }
+    }
+    return result.trim();
 }

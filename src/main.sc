@@ -81,7 +81,7 @@ theme: /
     state: Play
         intent!: /Новая игра
         script:
-            if ($session.guess == 0) {
+            if ($session.guess === 0) {
                 
             $session.key = chooseRandKey($session.keys)
             $session.keys.splice($session.key, 1)
@@ -96,7 +96,7 @@ theme: /
             
             } else { 
                 
-                if ($session.numErrors == 6) {
+                if ($session.numErrors === 6) {
                     $reactions.answer("А все, попытки закончились! Слово было " + $session.guess)
                     $reactions.answer("Не расстраивайся только. Давай ещё раунд сыграем? Пиши «Новая игра».")
                     $session.guess = 0
@@ -110,11 +110,11 @@ theme: /
             q: * [буква] $Letter
             script:
                 var letter = $parseTree._Letter.toLowerCase()
-                if ($session.usedLetters.indexOf(letter) == -1) {
+                if ($session.usedLetters.indexOf(letter) === -1) {
                     
                     $session.usedLetters.push(letter)
                     
-                    if ($session.word.indexOf(letter) !== -1) {
+                    if ($session.word.indexOf(letter) !=== -1) {
                         
                         if (isWordGuessed($session.word, $session.usedLetters)) {
                             
@@ -133,7 +133,7 @@ theme: /
                         
                     } else {
                         
-                        $reactions.answer("Не-а, такой буквы нет. Давай дальше.")
+                        $reactions.answer("Не-а, такой буквы нет.")
                         $reactions.answer($session.guess)
                         $session.numErrors = $session.numErrors + 1
                         $reactions.transition("/Play")
