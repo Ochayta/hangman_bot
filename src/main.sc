@@ -123,7 +123,20 @@ theme: /
                             $reactions.answer("Го еще разик? Если хочешь, напиши мне «Новая игра».")
                             $session.guess = 0
                             
+                        } else {
+                            
+                            $reactions.answer("О-о-откройте букву:")
+                            $reactions.answer($session.guess)
+                            $reactions.transition("/Play")
+                            
                             }
+                        
+                    } else {
+                        
+                        $reactions.answer("Не-а, такой буквы нет. Давай дальше.")
+                        $reactions.answer($session.guess)
+                        $session.numErrors = $session.numErrors + 1
+                        $reactions.transition("/Play")
                         
                         }
                     
