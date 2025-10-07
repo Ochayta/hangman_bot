@@ -78,10 +78,7 @@ theme: /
                 
     state: Play
         intent!: /Новая игра
-        if: !$session.keys || !$session.guess
-            go!: /Hangman/Start
-        else:
-            script:
+        script:
                 if ($session.guess === 0) {
                 
                 $session.key = chooseRandKey($session.keys)
